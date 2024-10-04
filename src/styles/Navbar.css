@@ -1,0 +1,121 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #00aaff;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.signup {
+  color: #00ff99;
+}
+
+.signin {
+  color: #ffcc00;
+}
+
+.burger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.burger-menu div {
+  width: 30px; /* Genişlik daha sabit olacak */
+  height: 3px; /* İncelik sağlamak için sabit yükseklik */
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+/* X Butonuna dönüşüm */
+.burger-menu.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px); /* Hafif sola ve aşağı kaydır */
+}
+
+.burger-menu.toggle .line2 {
+  opacity: 0; /* Orta çizgiyi görünmez yap */
+}
+
+.burger-menu.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px); /* Hafif sola ve yukarı kaydır */
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #333;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+
+  .nav-active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+}

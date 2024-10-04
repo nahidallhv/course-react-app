@@ -1,0 +1,58 @@
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("../assets/images/hero-image.jpg") no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    animation: slideIn 1s ease-out;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .cta {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #00aaff;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    animation: fadeIn 3s ease-in-out;
+  }
+  
+  .cta:hover {
+    background-color: #0088cc;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
